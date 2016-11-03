@@ -6,104 +6,191 @@
     <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title>Skeleton: Responsive CSS Boilerplate</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
+
+
+    <!-- Title
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <title>Pratibha weds Sankalp</title>
 
     <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
-
     <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.readable.min.css">
 
-    <!-- Scripts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Custom CSS -->
+    <link href="css/overideStyles.css" rel="stylesheet">
 
-    <!-- Favicon
+    <!-- IE8 specific HTML5 elements
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<!--    <link rel="icon" type="image/png" href="../../dist/images/favicon.png">-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
 <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                   </button>
+                    <a class="navbar-brand" href="#">Pratibha & Sankalp</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav nav-tabs nav-justified">
+                        <li>
+                            <a href="#">Overview</a>
+                        </li>
+                        <li>
+                            <a href="#">Wedding Details</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
 
-    <!-- Primary Page Layout
+        <!-- Page Content -->
+        <div class="container">
+
+            <!-- Jumbotron Header -->
+            <header class="jumbotron hero-spacer">
+                <h1>Pratibha weds Sankalp</h1>
+                <p><a class="btn btn-primary btn-large">RSVP</a>
+                </p>
+            </header>
+
+            <hr>
+
+            <!-- Title -->
+            <div class="row" text-center>
+                <div class="col-lg-12" style="padding-bottom: 1em;">
+                    <h2 class="text-center text-top">Events</h2>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <!-- Page Features -->
+            <div class="row text-center">
+
+                <div class="col-md-2 col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <p class="lead text-center">Wedding</p>
+                        </div>
+                        <div class="panel-body">
+                            <h4>Kolkata</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>Sangeet</h3>
+                        </div>
+                        <div class="panel-body">
+                            <h4> <span class="label label-default">Jan 19, 7:00PM</span></h4>
+                            <p>
+                                <h6>Belvedere Railway Club</h6>
+                            </p>
+                            <p>
+                                <a href="https://goo.gl/maps/tszdZu8rjfv" data-toggle='tooltip' titile='Open in Google Maps'>23, Belvedere Rd, Alipore, Kolkata, West Bengal </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <p>Baraat</p>
+                        </div>
+                        <div class="panel-body">
+                            <p class="label label-default">Jan 20, 6:30PM</p>
+                            <div>
+                                <h3 class="label label-info">Bride's Side</h3>
+                                <p class="lead">
+                                    Belvedere Railway Club
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/maps/tszdZu8rjfv" data-toggle='tooltip' titile='Open in Google Maps'>23, Belvedere Rd, Alipore, Kolkata, West Bengal </a>
+                                </p>
+                            </div>
+                            <div>
+                                <h3 class="label label-info">Groom's Side</h3>
+                                <p class="lead">
+                                    Hotel Metropole
+                                </p>
+                                <p>
+                                    <a href="https://goo.gl/maps/bEVv4MfppPA2" data-toggle='tooltip' titile='Open in Google Maps'>174, Sarat Bose Road, Kolkata, West Bengal</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <p>Wedding Ceremony</p>
+                        </div>
+                        <div class="panel-body">
+                            <p class="label label-default">Jan 20, 7:30PM</p>
+                            <p>
+                                <h6>Belvedere Railway Club</h6>
+                            </p>
+                            <p>
+                                <a href="https://goo.gl/maps/tszdZu8rjfv" data-toggle='tooltip' titile='Open in Google Maps'>23, Belvedere Rd, Alipore, Kolkata, West Bengal </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Footer -->
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Copyright &copy; Sankalp Gaur 2016</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!--  jQuery-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
-    <div class="section hero">
-        <div class="container">
-            <div class="row">
-                <div class="one-half column">
-                    <h4 class="hero-heading">Stop coding non-responsive sites. Let users view sites from anywhere.</h4>
-                    <a class="button button-primary" href="http://getskeleton.com">Try Skeleton</a>
-                </div>
-                <div class="one-half column phones">
-                    <img class="phone" src="images/iphone.png">
-                    <img class="phone" src="images/iphone.png">
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <div class="section values">
-        <div class="container">
-            <div class="row">
-                <div class="one-third column value">
-                    <h2 class="value-multiplier">67%</h2>
-                    <h5 class="value-heading">Purchase Increase</h5>
-                    <p class="value-description">Percentage of users more likely to purchase on mobile friendly site.</p>
-                </div>
-                <div class="one-third column value">
-                    <h2 class="value-multiplier">90%</h2>
-                    <h5 class="value-heading">Multi-device Users</h5>
-                    <p class="value-description">Most of the world accesses the internet on multiple devices.</p>
-                </div>
-                <div class="one-third column value">
-                    <h2 class="value-multiplier">66%</h2>
-                    <h5 class="value-heading">Sad Users</h5>
-                    <p class="value-description">Percentage of users that are frustrated with page load times.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section get-help">
-        <div class="container">
-            <h3 class="section-heading">Need help getting started?</h3>
-            <p class="section-description">Skeleton is an amazingly easy place to start with responsive development. If you want to learn more, just visit the documentation!</p>
-            <a class="button button-primary" href="http://getskeleton.com">View Skeleton Docs</a>
-        </div>
-    </div>
-
-    <div class="section categories">
-        <div class="container">
-            <h3 class="section-heading">Responsive Images</h3>
-            <p class="section-description">Skeleton images sit easily in grid with .u-max-full-width class. I suggest exploring solution to serving different images based on device size.</p>
-            <div class="row">
-                <div class="one-half column category">
-                    <img class="u-max-full-width" src="images/placeholder.png">
-                </div>
-                <div class="one-half column category">
-                    <img class="u-max-full-width" src="images/placeholder.png">
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 
 </html>
