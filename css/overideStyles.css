@@ -12,10 +12,51 @@ body {
     margin-top: 50px;
 }
 
+.jumbotron{
+    height:500px;
+    width:100%;
+    vertical-align: bottom;
+    
+    background-image: url(../images/pjoandsanks.png);
+    background-size: 100% auto;
+
+}
+
 .hero-feature {
     margin-bottom: 30px;
 }
 
+/*-------------------- Utility Class ----------------------*/
+.pa-1 {
+    padding:1em;
+}
+.pa-t_5 {
+    padding-top: 0.5em;
+}
+.pa-t-1 {
+    padding-top: 1em;
+}
+.pa-t-2 {
+    padding-top: 2em;
+}
+.pa-b_5 {
+    padding-bottom: 0.5em;
+}
+.pa-b-1 {
+    padding-bottom: 1em;
+}
+.pa-b-2 {
+    padding-bottom: 2em;
+}
+.ma-t-10{
+    margin-top: 10em;
+}
+.ma-r-4{
+    margin-right:2em;
+}
+.ma-b-2{
+    margin-bottom: 2em;
+}
 footer {
     margin: 50px 0;
 }
