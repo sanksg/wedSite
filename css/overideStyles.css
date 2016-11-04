@@ -5,20 +5,64 @@
  */
 
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 51px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-color:rgb(240,238,226);
+    color: rgb(75,75,75);
 }
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+
+h1,h2,h3,h4,li {
+    font-family: "Raleway", Arial, sans-serif;
+}
+
+.arial {
+    font-family: Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+a {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar {
+    background-color:rgb(240,238,226);
+}
+
+.navbar-nav {
+    text-align: center;
+    width: 100%
+}
+.navbar-nav > li {
+    float: none;
+    display: inline-block;
+}
+
+
+header{
+    background-color: white;
+    padding-top:20px;
+}
+
 
 .hero-spacer {
     margin-top: 50px;
 }
 
-.jumbotron{
-    height:500px;
-    width:100%;
-    vertical-align: bottom;
-    
+.header-img{
+/*    height:40px;*/
+    width:920px;
+    display: block;
+    margin: 0 auto;
+    /*
     background-image: url(../images/pjoandsanks.png);
     background-size: 100% auto;
+    color:aliceblue;
+*/
 
 }
 
@@ -26,6 +70,15 @@ body {
     margin-bottom: 30px;
 }
 
+
+.label-info {
+    background-color: lightsalmon; 
+    font-size:102%;
+    font-weight:400;
+    padding: 5px;
+/*    border: 1px solid darkgray;*/
+    color: black;
+}
 /*-------------------- Utility Class ----------------------*/
 .pa-1 {
     padding:1em;
@@ -47,6 +100,9 @@ body {
 }
 .pa-b-2 {
     padding-bottom: 2em;
+}
+.pa-r_5{
+    padding-right: 0.5em;
 }
 .ma-t-10{
     margin-top: 10em;
