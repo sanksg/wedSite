@@ -22,11 +22,10 @@
     <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Custom CSS -->
     <link href="css/overideStyles.css" rel="stylesheet">
-
 
     <!--Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -79,83 +78,120 @@
         <!-- Jumbotron Header -->
         <header class="row">
             <img class="header-img" src="images/pjoandsanks.png" alt="">
-            <h1 class="text-center text-uppercase">Pratibha and Sankalp</h1>
-            <p class="text-center"><a class="btn btn-primary btn-large">RSVP</a>
+            <h1 class="text-center text-capitalize title">Pratibha and Sankalp</h1>
+            <p>
+                <h4 class="text-center stretch text-uppercase">Friday, January 20, 2017 &bull; Calcutta, West Bengal </h4></p>
+            <p>
+                <h4 class="text-center"><span id="daysToGo"></span> days to go!</h4></p>
+            <p class="ma-t-1 text-center">
+                <button type="button" class="btn btn-info btn-large" id="rsvpButton">RSVP</button>
             </p>
+
+            <!-- RSVP Modal -->
+            <div id="rsvpModal" class="modal fade" role="dialog" style="display:none;">
+                <div class="modal-dialog">
+
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <iframe src="" style="zoom:0.05" width="100%" height="470px" frameborder="0">Loading...</iframe>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
         </header>
 
-        <hr>
-
-        <!-- Title -->
-        <div id="events" class="row text-center">
-            <div class="col-lg-12 pa-b-1">
-                <h2>Events</h2>
-            </div>
-        </div>
-        <!-- /.row -->
 
         <!-- Wedding in Kolkata - Row -->
-        <div class="row text-center">
+        <div id="events" class="row text-center">
+
+            <img class="floral1" src="images/floral-2.jpg">
 
             <!--Wedding in Kolkata large column 12-->
-            <div class="col-lg-12 pa-b-2">
-                <h3 class="text-uppercase">The Wedding</h3>
+            <div class="col-lg-12">
+                <h2 class="text-uppercase pa-b-1">The Wedding</h2>
             </div>
+
 
             <!-- Next row - Three event columns-->
             <!-- Sangeet -->
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-3 col-sm-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Sangeet</h4>
+                        <h4>Ladies <div>Sangeet</div></h4>
                     </div>
                     <div class="panel-body">
-                        <h4 class="arial">Thursday, Jan 19<div>7:00PM</div></h4>
+                        <h4 class="sans">Thursday, Jan 19<div>7:00PM</div></h4>
                         <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
 
                         <h4>Belvedere Railway Club</h4>
-                        <h5><a href="https://goo.gl/maps/tszdZu8rjfv" data-toggle='tooltip' title='Open in Google Maps'>23, Belvedere Rd, Alipore, Kolkata, West Bengal </a></h5>
+                        <h5><a href="https://goo.gl/maps/tszdZu8rjfv" data-toggle='tooltip' title='Open in Google Maps'><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>   23, Belvedere Rd, Alipore, Kolkata, WB </a></h5>
                     </div>
                 </div>
             </div>
 
             <!-- Baraat -->
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-3 col-sm-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Baraat</h4>
+                        <h4>Baraat<div>Bride's Side</div></h4>
                     </div>
                     <div class="panel-body">
                         <div>
-                            <h4 class='pa-b_5'> <span class="label label-info">Bride's Party</span></h4>
-                            <h4 class="arial">Friday, Jan 20 <div>6:30PM</div></h4>
+                            <h4 class="sans">Friday, Jan 20 <div>6:30PM</div></h4>
                             <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
                             <h4>Belvedere Railway Club</h4>
-                            <h5><a href="https://goo.gl/maps/tszdZu8rjfv" data-toggle='tooltip' title='Open in Google Maps'>23, Belvedere Rd, Alipore, Kolkata, West Bengal </a></h5>
-                        </div>
-                        <div class="pa-t-1">
-                            <h4 class="pa-b_5"><span class="label label-info">Groom's Party</span></h4>
-                            <h4 class="arial">Friday, Jan 20, 6:30PM</h4>
-                            <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
-                            <h4>Hotel Metropole</h4>
-                            <h5><a href="https://goo.gl/maps/bEVv4MfppPA2" data-toggle='tooltip' title='Open in Google Maps'>174, Sarat Bose Road, Kolkata, West Bengal</a>
-                            </h5>
+                            <h5><a href="https://goo.gl/maps/tszdZu8rjfv" data-toggle='tooltip' title='Open in Google Maps'><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>  23, Belvedere Rd, Alipore, Kolkata, WB </a></h5>
                         </div>
                     </div>
                 </div>
             </div>
 
+
+            <!-- Baraat -->
+            <div class="col-md-3 col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Baraat <div>Groom's Side</div></h4>
+                    </div>
+                    <div class="panel-body">
+                        <h4 class="sans">Friday, Jan 20, 6:30PM</h4>
+                        <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
+                        <h4>Hotel Metropole</h4>
+                        <h5><a href="https://goo.gl/maps/bEVv4MfppPA2" data-toggle='tooltip' title='Open in Google Maps'><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 174, Sarat Bose Road, Kolkata, WB</a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+
             <!-- Wedding Ceremony -->
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-3 col-sm-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>Wedding Ceremony</h4>
                     </div>
                     <div class="panel-body">
-                        <h4 class="arial">Friday, Jan 20, <div>7:30PM</div></h4>
-                        <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>    
+                        <h4 class="sans">Friday, Jan 20, <div>7:30PM</div></h4>
+                        <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
                         <h4>Belvedere Railway Club</h4>
-                        <h5><a href="https://goo.gl/maps/tszdZu8rjfv" data-toggle='tooltip' title='Open in Google Maps'>23, Belvedere Rd, Alipore, Kolkata, West Bengal </a></h5>
+                        <h5><a href="https://goo.gl/maps/tszdZu8rjfv" data-toggle='tooltip' title='Open in Google Maps'><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>  23, Belvedere Rd, Alipore, Kolkata, WB </a></h5>
                     </div>
                 </div>
             </div>
@@ -166,11 +202,14 @@
 
 
         <!-- Reception in Lucknow - Row -->
-        <div class="row pa-t-2 text-center">
+        <div class="row pa-t-1 text-center">
 
             <!--Wedding in Kolkata large column 12-->
-            <div class="col-lg-12">
-                <h3 class="text-uppercase pa-b_5">Wedding Reception</h3>
+            <div class="col-lg-6 col-md-offset-3">
+
+                <img class="floral2" src="images/floral-12.jpg">
+
+                <h2 class="text-uppercase pa-b-1">Wedding Reception</h2>
             </div>
 
             <!-- One event columns-->
@@ -181,11 +220,11 @@
                         <h4>Reception</h4>
                     </div>
                     <div class="panel-body">
-                        <h4 class="arial">Monday, Jan 23<div>7:00PM</div> </h4>
+                        <h4 class="sans">Monday, Jan 23<div>7:00PM</div> </h4>
                         <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
-                            
+
                         <h4>Hotel Clarks Avadh</h4>
-                        <h5><a href="https://goo.gl/maps/wzQdrZfBj2T2" data-toggle='tooltip' title='Open in Google Maps'>8, Mahatma Gandhi Marg, Hazratganj, Qaiserbagh, Lucknow, UP 226001</a></h5>
+                        <h5><a href="https://goo.gl/maps/wzQdrZfBj2T2" data-toggle='tooltip' title='Open in Google Maps'><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 8, Mahatma Gandhi Marg, Hazratganj, Qaiserbagh, Lucknow, UP</a></h5>
                     </div>
                 </div>
             </div>
@@ -194,19 +233,41 @@
         </div>
         <!-- /.row -->
 
+        <!--Wedding Details-->
+        <div class="row text-center">
+            <img class="floral1" src="images/floral-2.jpg">
+
+            <div class="col-lg-12">
+                <h2>Wedding Details</h2>
+            </div>
+            <div class="col-md-12">
+                <h3>Coming Soon</h3>
+            </div>
+        </div>
+
+        <!--Contact-->
+        <div class="row text-center">
+            <img class="floral1" src="images/floral-2.jpg">
+
+            <div class="col-md-12">
+                <h2>Contact Information</h2>
+            </div>
+            <div class="col-md-12">
+                <h3>Coming Soon</h3>
+            </div>
+        </div>
+
 
         <!-- Footer -->
         <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <hr>
-                    <p>Copyright &copy; Sankalp Gaur 2016</p>
-                </div>
+            <div class="row text-center">
+                <img class="floral3" src="images/floral-4.jpg">
             </div>
         </footer>
 
     </div>
     <!-- /.container -->
+
 
     <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -216,6 +277,30 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <script language="javascript">
+        window.onload = function (e) {
+            var wedDate = new Date(2017, 0, 20);
+            var today = new Date(Date.now());
+            var timeMsc = wedDate.getTime() - today.getTime();
+            var dayDiff = Math.round(timeMsc / (1000 * 60 * 60 * 24));
+            document.getElementById("daysToGo").innerHTML = dayDiff;
+        }
+    </script>
+
+    <script language="javascript">
+        var frameSrc = "https://docs.google.com/forms/d/e/1FAIpQLSeYd646avX_e7FgD3qjxZmFJtsDmPy0ktmX-NSTKjYB5kBJ_w/viewform?embedded=true";
+
+        $('#rsvpButton').click(function () {
+            $('#rsvpModal').on('show', function () {
+
+                $('iframe').attr("src", frameSrc);
+
+            });
+            $('#rsvpModal').modal({
+                show: true
+            })
+        });
+    </script>
 </body>
 
 </html>
