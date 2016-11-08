@@ -7,7 +7,7 @@
 body {
     padding-top: 20px;
     text-rendering: optimizeLegibility;
-    background: url("/images/redBeigePattern.jpg");
+    background: url("/images/floral4.jpg");
 }
 
 .container {
@@ -49,14 +49,15 @@ li {
 .title {
     font-family: Raleway;
     font-size: 375%;
-    color: black;
-    font-weight: 300;
+    color: #444444;
+    font-weight: 100;
+    letter-spacing: 2px;
     text-rendering: optimizeLegibility;
 }
 
 .navbar,
 .navbar .container {
-    background-color: #9a0101;
+    background-color: #8c0000;
 }
 
 .navbar-nav {
@@ -128,6 +129,25 @@ header {
     font-weight: 400;
 }
 
+.modalHead {
+    margin-bottom: -0.8em;
+    margin-top: -0.1em;
+}
+
+.modalBody {
+    height:70vh;
+    overflow-y: auto;
+    margin-bottom: 1em;
+}
+
+select {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+select.custom::-ms-expand {
+  display: none;
+}
 
 /*-------------------- Utility Class ----------------------*/
 
