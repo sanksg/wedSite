@@ -19,10 +19,10 @@
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Bootstrap-select dropdown picker -->
-    
+
     <!-- Custom CSS -->
     <link href="css/overideStyles.css" rel="stylesheet">
-    
+
     <!--Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <!-- IE8 specific HTML5 elements
@@ -40,7 +40,7 @@
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <button type="button" class="navbar-toggle pull-left collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -70,7 +70,8 @@
         <!-- Jumbotron Header -->
         <header class="row">
             <img class="header-img" src="images/pjoandsanks.png" alt="">
-            <h1 class="text-center text-uppercase title">Pratibha and Sankalp</h1>
+            <h1 class="text-center text-uppercase title visible-lg visible-md visible-sm">Pratibha and Sankalp</h1>
+            <h1 class="text-center text-uppercase title visible-xs">Pratibha <p>And</p> Sankalp</h1>
             <p>
                 <h4 class="text-center stretch text-uppercase">Friday, January 20, 2017 &bull; Calcutta, West Bengal </h4></p>
             <p>
@@ -102,12 +103,12 @@
         <div id="events" class="row text-center">
             <img class="floral1" src="images/floral-2.jpg">
             <!--Wedding in Kolkata large column 12-->
-            <div class="col-lg-12">
+            <div>
                 <h2 class="text-uppercase pa-b-1">The Wedding</h2>
             </div>
-            <!-- Next row - Three event columns-->
+            <!-- Next row - Four event columns-->
             <!-- Sangeet -->
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6 col-lg-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>Ladies <div>Sangeet</div></h4>
@@ -121,7 +122,7 @@
                 </div>
             </div>
             <!-- Baraat -->
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6 col-lg-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>Baraat<div>Bride's Side</div></h4>
@@ -137,7 +138,7 @@
                 </div>
             </div>
             <!-- Baraat -->
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6 col-lg-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>Baraat <div>Groom's Side</div></h4>
@@ -152,7 +153,7 @@
                 </div>
             </div>
             <!-- Wedding Ceremony -->
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6 col-lg-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>Wedding Ceremony</h4>
@@ -170,13 +171,13 @@
         <!-- Reception in Lucknow - Row -->
         <div class="row pa-t-1 text-center">
             <!--Wedding in Kolkata large column 12-->
-            <div class="col-lg-6 col-md-offset-3">
+            <div class="">
                 <img class="floral2" src="images/floral-12.jpg">
                 <h2 class="text-uppercase pa-b-1">Wedding Reception</h2>
             </div>
             <!-- One event columns-->
             <!-- Reception -->
-            <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
+            <div class="col-lg-4 col-md-4 col-sm-6 center-block">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>Reception</h4>
@@ -224,25 +225,92 @@
     <!--  jQuery-->
     <script src="js/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    
+    
+<script src="js/bootstrap.min.js"></script>
+<!---->
 
+    <!--Custom Javascript-->
+    <script language="javascript">
+        //Set how many days to go once the page is ready
+        $(document).ready(function () {
+            daysLeft();
+            
+        });
+        
+        function daysLeft(){
+            var wedDate = new Date(2017, 0, 20);
+            var today = new Date(Date.now());
+            var timeMsc = wedDate.getTime() - today.getTime();
+            var dayDiff = Math.round(timeMsc / (1000 * 60 * 60 * 24));
+            $("#daysToGo").html(dayDiff);
+        }
 
-    <script language="javascript">
-    window.onload = function(e) {
-        var wedDate = new Date(2017, 0, 20);
-        var today = new Date(Date.now());
-        var timeMsc = wedDate.getTime() - today.getTime();
-        var dayDiff = Math.round(timeMsc / (1000 * 60 * 60 * 24));
-        document.getElementById("daysToGo").innerHTML = dayDiff;
-    }
-    </script>
-    <script language="javascript">
-    $('#rsvpButton').click(function() {
-        $('#rsvpModalBody').load('rsvpForm.html');
-        $('#rsvpModal').modal({
-            show: true
-        })
-    });
+        function validateName(el) {
+            var input = $(el);
+            var re = /[a-zA-Z ]+/;
+            var is_name = re.test(input.val());
+            if (is_name) {
+                $('#nameDiv').removeClass("has-error").addClass("has-success");
+            } else {
+                $('#nameDiv').removeClass("has-success").addClass("has-error");
+            }
+        }
+        
+        function validateEmail(el) {
+            var input = $(el);
+            var emailDiv = $('#emailDiv');
+            var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/;
+            var is_email = re.test(input.val());
+            if (is_email) {
+                emailDiv.removeClass("has-error").addClass("has-success");
+            } else {
+                emailDiv.removeClass("has-success").addClass("has-error");
+            }
+        }
+
+        function validatePhone(el) {
+            var input = $(el);
+            var phoneDiv = $('#phoneDiv');
+            var re = /[0-9()-+ ]{10,15}/;
+            var is_phone = re.test(input.val());
+            if (is_phone) {
+                phoneDiv.removeClass("has-error").addClass("has-success");
+            } else {
+                phoneDiv.removeClass("has-success").addClass("has-error");
+            }
+        }
+        
+        //This function shows the modal with RSVP form 
+        $('#rsvpButton').click(function () {
+            $('#rsvpModalBody').load('rsvpForm.html');
+            $('#rsvpModal').modal({
+                show: true
+            })
+        });
+
+        //Convert from 12-hr format to 24hr format for arrival times
+        function handleAmPm(el) {
+            idPrefix = el.id.substring(0, 11);
+            amPmId = "#" + idPrefix + "AmPm";
+            hrId = "#" + idPrefix + "Hr";
+
+            val = $(amPmId).val();
+            currentHr = parseInt($(hrId).val());
+            console.log("Hr: " + currentHr);
+            newHr = currentHr;
+            if (val == "PM") {
+                if (currentHr <= 12) {
+                    newHr = currentHr + 12;
+                }
+            } else if (val == "AM") {
+                if (currentHr > 12) {
+                    newHr = currentHr - 12;
+                }
+            }
+            $(hrId + ' option:selected').val(newHr);
+            console.log($(hrId).val());
+        };
     </script>
 </body>
 

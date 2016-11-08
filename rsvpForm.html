@@ -1,17 +1,21 @@
-<form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeYd646avX_e7FgD3qjxZmFJtsDmPy0ktmX-NSTKjYB5kBJ_w/formResponse" method="POST" onsubmit="" style="height:95vh;">
+<form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeYd646avX_e7FgD3qjxZmFJtsDmPy0ktmX-NSTKjYB5kBJ_w/formResponse" method="POST" onsubmit="">
     <fieldset>
-        <div class="form-group">
+        <div class="form-group has-error" id="nameDiv">
             <label for="guestFirstName" class="control-label">Name</label>
-            <input type="text" required="true" name="entry.383267079" class="form-control" id="guestFirstName" placeholder="Name">
+            <input type="text" required="true" name="entry.383267079"  oninput="validateName(this);" class="form-control" id="guestFirstName" placeholder="Name">
         </div>
-        <div class="form-group">
+        <div class="form-group has-error" id="emailDiv">
             <label for="guestEmail" class="control-label">Email</label>
-            <input type="email" class="form-control" name="entry.692929590" required="true" id="guestEmail" placeholder="Email Address">
+            <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input type="email" class="form-control" name="entry.692929590" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$" required="true" id="guestEmail" placeholder="Email Address" oninput="validateEmail(this);">
+            </div>
+            <span id="phoneNumHelp" class="help-block">A valid email address like name@example.com</span>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="phoneDiv">
             <label for="guestPhoneNum" class="control-label">Phone Number</label>
-            <input type="tel" class="form-control" name="entry.2034164786 id="guestPhoneNum" placeholder="Phone Number">
-            <span id="arrTimeHelpKol" class="help-block">Please enter your 10 digit phone number</span>
+            <input type="tel" class="form-control" name="entry.2034164786" pattern="[0-9()-+ ]{10,15}" oninput="validatePhone(this);" id="guestPhoneNum" placeholder="Phone Number" aria-describedby="phoneNumHelp">
+            <span id="phoneNumHelp" class="help-block">Please enter your 10 digit phone number</span>
         </div>
     </fieldset>
     <fieldset>
@@ -19,34 +23,57 @@
             <label class="control-label">Will you be travelling to Kolkata for the wedding?</label>
             <div class="radio">
                 <label>
-                    <input type="radio" id="guestTravelKolkata" name="entry.1264061408" value="yes" checked onclick="$('#guestTravelKolDiv').removeClass('hidden');"> Yes
+                    <input type="radio" id="guestTravelKolkata" name="entry.1264061408" value="Yes" checked="checked" onclick="$('#guestTravelKolDiv').removeClass('hidden');"> Yes
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" id="guestTravelKolkata" name="entry.1264061408" value="no" onclick="$('#guestTravelKolDiv').addClass('hidden');"> No
+                    <input type="radio" id="guestTravelKolkata" name="entry.1264061408" value="No" onclick="$('#guestTravelKolDiv').addClass('hidden');"> No
                 </label>
             </div>
         </div>
         <div id="guestTravelKolDiv">
-            <div class="form-group">
+            <div class="form-group form-inline">
+                <!-- names: entry.1451076624_year entry.1451076624_month entry.1451076624_day -->
                 <label for="guestArrKolDate" class="control-label">Arriving On</label>
-                <input type="date" id="guestArrKolDate" class="form-control" placeholder="Arrival Date">
-                <select class="" name="entry.1451076624_day" id="guestArrKolDay">
-                    <option value="17">Jan 17, Tuesday</option>
-                    <option value="18">Jan 18, Wednesday</option>
-                    <option value="19">Jan 19, Thursday</option>
-                    <option value="20">Jan 20, Friday</option>
-                </select>
+                <span id="arrTimeHelpKol" class="help-block">The sangeet is on Thursday, and the wedding is on Friday</span>
 
+                <select class="" name="entry.1451076624_day" form="rsvpForm" id="guestArrKolDay">
+                    <option value="17">Tuesday, Jan 17</option>
+                    <option value="18" selected>Wednesday, Jan 18</option>
+                    <option value="19">Thursday, Jan 19</option>
+                    <option value="20">Friday, Jan 20</option>
+                </select>
+                <input type="text" id="guestArrKolMonth" class="hidden" name="entry.1451076624_month" value="01">
+                <input type="text" class="hidden" name="entry.1451076624_year" value="2017">
             </div>
 
-            <!-- TODO: entry.1451076624_year entry.1451076624_month entry.1451076624_day -->
-
-            <div class="form-group">
-                <label for="guestArrKolTime" class="control-label">Arrival Time</label>
-                <input type="time" id="guestArrKolTime" class="form-control" placeholder="Arrival Time" aria-describedby="arrTimeHelpKol">
-                <span id="arrTimeHelpKol" class="help-block">This will help coordinate pickups from the airport</span>
+            <div class="form-group form-inline">
+                <label for="guestArrKolTime" class="control-label" aria-describedby="arrTimeHelpKol">Arrival Time</label>
+                <span id="arrTimeHelpKol" class="help-block">This will help coordinate pickups from the airport if required</span>
+                <select class="" name="entry.1499328218_hour" form="rsvpForm" id="guestArrKolHr" onchange="handleAmPm(this);">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11" selected>11</option>
+                    <option value="12">12</option>
+                </select>
+                <label class="control-label">:</label>
+                <select class="" name="entry.1499328218_minute" form="rsvpForm" id="guestArrKolMin">
+                    <option value="00" selected>00</option>
+                    <option value="30">30</option>
+                </select>
+                <select class="" form="rsvpForm" id="guestArrKolAmPm" onchange="handleAmPm(this);">
+                    <option value="AM" selected>AM</option>
+                    <option value="PM">PM</option>
+                </select>
 
                 <!-- TODO: entry.1499328218_hour entry.1499328218_minute -->
             </div>
@@ -57,28 +84,60 @@
             <label class="control-label">Will you be travelling to Lucknow for the wedding reception?</label>
             <div class="radio">
                 <label>
-                    <input type="radio" id="guestTravelLuckonw" name="entry.486642084" value="yes" checked checked onclick="$('#guestTravelLkoDiv').removeClass('hidden');"> Yes
+                    <input type="radio" id="guestTravelLuckonw" name="entry.486642084" value="Yes" checked onclick="$('#guestTravelLkoDiv').removeClass('hidden');"> Yes
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" id="guestTravelLuckonw" name="entry.486642084" value="no" onclick="$('#guestTravelLkoDiv').addClass('hidden');"> No
+                    <input type="radio" id="guestTravelLuckonw" name="entry.486642084" value="No" onclick="$('#guestTravelLkoDiv').addClass('hidden');"> No
                 </label>
             </div>
         </div>
         <div id="guestTravelLkoDiv">
-            <div class="form-group">
+            <div class="form-group form-inline">
+                <!-- TODO: entry.559724985_year entry.559724985_month entry.559724985_day -->
                 <label for="guestArrLkoDate" class="control-label">Arriving On</label>
-                <input type="date" id="guestArrLkoDate" class="form-control" placeholder="Arrival Date">
-            <!-- TODO: entry.559724985_year entry.559724985_month entry.559724985_day -->
+                <span id="arrTimeHelpLko" class="help-block">The reception is on Monday, Jan 23 at 7:00PM</span>
+
+                <select class="" name="entry.559724985_day" form="rsvpForm" id="guestArrLkoDay">
+                    <option value="21">Saturday, Jan 21</option>
+                    <option value="22" selected>Sunday, Jan 22</option>
+                    <option value="23">Monday, Jan 23</option>
+                </select>
+                <input type="text" id="guestArrLkoMonth" class="hidden" name="entry.559724985_month" value="01">
+                <input type="text" class="hidden" name="entry.559724985_year" value="2017">
             </div>
 
-            <div class="form-group">
-                <label for="guestArrLkoTime" class="control-label">Arrival Time</label>
-                <input type="time" id="guestArrLkoTime" class="form-control" placeholder="Arrival Time" aria-describedby="arrTimeHelpLko">
-                <span id="arrTimeHelpLko" class="help-block">This will help coordinate pickups from the airport</span>
+
+            <div class="form-group form-inline">
+                <label for="guestArrLkoTime" class="control-label" aria-describedby="arrTimeHelpLko">Arrival Time</label>
+                <span id="arrTimeHelpLko" class="help-block">This will help coordinate pickups from the airport if required</span>
                 <!-- Todo: entry.284634383_hour entry.284634383_minute-->
+                <select class="" name="entry.284634383_hour" form="rsvpForm" id="guestArrLkoHr" onchange="handleAmPm(this);">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11" selected>11</option>
+                    <option value="12">12</option>
+                </select>
+                <label class="control-label">:</label>
+                <select class="" name="entry.284634383_minute" form="rsvpForm" id="guestArrLkoMin">
+                    <option value="00" selected>00</option>
+                    <option value="30">30</option>
+                </select>
+                <select class="" form="rsvpForm" id="guestArrLkoAmPm" onchange="handleAmPm(this);">
+                    <option value="AM" selected>AM</option>
+                    <option value="PM">PM</option>
+                </select>
             </div>
+
         </div>
     </fieldset>
     <div class="text-center pa-b-1">
@@ -87,4 +146,3 @@
 </form>
 
 <!-- curl --data "entry.383267079=Sanks&entry.692929590=sanks@sanks.com&entry.2034164786=9959569683&entry.1264061408=yes&entry.486642084=yes" https://docs.google.com/forms/d/e/1FAIpQLSeYd646avX_e7FgD3qjxZmFJtsDmPy0ktmX-NSTKjYB5kBJ_w/formResponse -->
-

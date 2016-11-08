@@ -20,14 +20,6 @@ body {
     }
 }
 
-.modal-dialog, .modal-content {
-    height: 96vh;
-}
-
-.modal-footer {
-    margin: 0 auto;
-    margin-bottom: 10px;
-}
 
 h1,
 h2,
@@ -35,6 +27,11 @@ h3,
 h4,
 li {
     font-family: "Raleway", Arial, sans-serif;
+}
+
+h1 p {
+    margin:0;
+    padding: 0;
 }
 
 .sans {
@@ -69,6 +66,11 @@ li {
     font-size: 120%;
     float: none;
     display: inline-block;
+}
+
+
+.navbar-header{
+    padding-left: 15px;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -129,6 +131,18 @@ header {
     font-weight: 400;
 }
 
+
+.center-block {
+    margin:0 auto;
+    float: none;
+}
+
+
+.modal-footer {
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
 .modalHead {
     margin-bottom: -0.8em;
     margin-top: -0.1em;
@@ -148,6 +162,8 @@ select {
 select.custom::-ms-expand {
   display: none;
 }
+
+
 
 /*-------------------- Utility Class ----------------------*/
 
