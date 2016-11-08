@@ -315,15 +315,11 @@
 
         function submitRsvp(ev) {
             frm = $('#rsvpForm');
-            console.log(frm.attr('method'));
-            console.log(frm.attr('action'));
-            console.log(frm.serialize());
             $.ajax({
                 type: frm.attr('method'),
                 url: frm.attr('action'),
                 data: frm.serialize(),
-                success: function (data) {
-//                    console.log("Thank you");
+                complete: function (data) {
                     $('#rsvpForm').addClass('hidden');
                     $('#submitSuccess').removeClass('hidden');    
                 }
