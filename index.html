@@ -235,6 +235,9 @@
         //Set how many days to go once the page is ready
         $(document).ready(function () {
             daysLeft();
+            
+            $('#rsvpModalBody').load('rsvpForm.html');
+
 
         });
 
@@ -283,7 +286,6 @@
 
         //This function shows the modal with RSVP form 
         $('#rsvpButton').click(function () {
-            $('#rsvpModalBody').load('rsvpForm.html');
             $('#rsvpModal').modal({
                 show: true
             })
