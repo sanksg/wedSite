@@ -1,4 +1,4 @@
-<form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeYd646avX_e7FgD3qjxZmFJtsDmPy0ktmX-NSTKjYB5kBJ_w/formResponse" method="POST" onsubmit="">
+<form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeYd646avX_e7FgD3qjxZmFJtsDmPy0ktmX-NSTKjYB5kBJ_w/formResponse" onsubmit ="submitRsvp(event);" method="POST">
     <fieldset>
         <div class="form-group has-error" id="nameDiv">
             <label for="guestFirstName" class="control-label">Name</label>
@@ -145,4 +145,8 @@
     </div>
 </form>
 
+
+<div id="submitSuccess" class="hidden">
+    <h2>Thank you! Your RSVP has been recorded.</h2>
+</div>
 <!-- curl --data "entry.383267079=Sanks&entry.692929590=sanks@sanks.com&entry.2034164786=9959569683&entry.1264061408=yes&entry.486642084=yes" https://docs.google.com/forms/d/e/1FAIpQLSeYd646avX_e7FgD3qjxZmFJtsDmPy0ktmX-NSTKjYB5kBJ_w/formResponse -->

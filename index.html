@@ -225,20 +225,20 @@
     <!--  jQuery-->
     <script src="js/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    
-    
-<script src="js/bootstrap.min.js"></script>
-<!---->
+
+
+    <script src="js/bootstrap.min.js"></script>
+    <!---->
 
     <!--Custom Javascript-->
     <script language="javascript">
         //Set how many days to go once the page is ready
         $(document).ready(function () {
             daysLeft();
-            
+
         });
-        
-        function daysLeft(){
+
+        function daysLeft() {
             var wedDate = new Date(2017, 0, 20);
             var today = new Date(Date.now());
             var timeMsc = wedDate.getTime() - today.getTime();
@@ -248,7 +248,7 @@
 
         function validateName(el) {
             var input = $(el);
-            var re = /[a-zA-Z ]+/;
+            var re = /^[a-zA-Z ]+$/;
             var is_name = re.test(input.val());
             if (is_name) {
                 $('#nameDiv').removeClass("has-error").addClass("has-success");
@@ -256,7 +256,7 @@
                 $('#nameDiv').removeClass("has-success").addClass("has-error");
             }
         }
-        
+
         function validateEmail(el) {
             var input = $(el);
             var emailDiv = $('#emailDiv');
@@ -280,7 +280,7 @@
                 phoneDiv.removeClass("has-success").addClass("has-error");
             }
         }
-        
+
         //This function shows the modal with RSVP form 
         $('#rsvpButton').click(function () {
             $('#rsvpModalBody').load('rsvpForm.html');
@@ -311,6 +311,26 @@
             $(hrId + ' option:selected').val(newHr);
             console.log($(hrId).val());
         };
+
+
+        function submitRsvp(ev) {
+            frm = $('#rsvpForm');
+            console.log(frm.attr('method'));
+            console.log(frm.attr('action'));
+            console.log(frm.serialize());
+            $.ajax({
+                type: frm.attr('method'),
+                url: frm.attr('action'),
+                data: frm.serialize(),
+                success: function (data) {
+//                    console.log("Thank you");
+                    $('#rsvpForm').addClass('hidden');
+                    $('#submitSuccess').removeClass('hidden');    
+                }
+            });
+
+            ev.preventDefault();
+        }
     </script>
 </body>
 
