@@ -16,7 +16,7 @@ body {
 
 @media (min-width: 1200px) {
     .container {
-        width: 970px;
+/*        width: 970px;*/
     }
 }
 
@@ -109,7 +109,7 @@ header {
 
 .header-img {
     /*    height:40px;*/
-    width: 800px;
+    width: 80%;
     display: block;
     margin: 0 auto;
     /*    margin-top:20px;*/
@@ -163,7 +163,10 @@ select.custom::-ms-expand {
   display: none;
 }
 
-
+.btn-large h2 {
+    margin-top:0;
+    margin-bottom: 0;
+}
 
 /*-------------------- Utility Class ----------------------*/
 
