@@ -10,6 +10,7 @@ body {
     background: url("/images/floral4.jpg");
 }
 
+
 .container {
     background-color: #F0EEE2;
 }
@@ -19,6 +20,8 @@ body {
 /*        width: 970px;*/
     }
 }
+
+
 
 
 h1,
@@ -32,6 +35,19 @@ li {
 h1 p {
     margin:0;
     padding: 0;
+}
+
+@media (max-width: 767px) {
+    h4 {
+        font-size: 28px;
+    }
+    h5 {
+        font-size: 22px;
+    }
+}
+
+.panel-heading h4 {
+    font-weight: 500;
 }
 
 .sans {
@@ -182,6 +198,7 @@ select.custom::-ms-expand {
     padding-top: 1em;
 }
 
+
 .pa-t-2 {
     padding-top: 2em;
 }
@@ -194,6 +211,9 @@ select.custom::-ms-expand {
     padding-bottom: 1em;
 }
 
+.pa-b-15 {
+    padding-bottom: 1.5em;
+}
 .pa-b-2 {
     padding-bottom: 2em;
 }
