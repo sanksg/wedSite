@@ -71,8 +71,9 @@ h5 {
 }
 
 .glyphicon {
-    padding-right: 5px;
+    padding-right: 2px;
 }
+
 
 @media(max-width: 1200px) {
     .glyphicon {
