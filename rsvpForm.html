@@ -1,57 +1,73 @@
-<form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeYd646avX_e7FgD3qjxZmFJtsDmPy0ktmX-NSTKjYB5kBJ_w/formResponse" onsubmit ="submitRsvp(event);" method="POST">
-    <fieldset>
-        <div class="form-group has-error" id="nameDiv">
+<form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdaYHS2zhtR2VJLjkgBSWXAYXdEy4gvboAZZwS-ftlhRZ_mbw/formResponse" onsubmit="submitRsvp(event);" method="POST">
+    <fieldset class="form-border">
+        <legend class="form-border">Guest</legend>
+
+        <div class="form-group" id="nameDiv">
             <label for="guestFirstName" class="control-label">Name</label>
-            <input type="text" required="true" name="entry.383267079"  oninput="validateName(this);" class="form-control" id="guestFirstName" placeholder="Name">
+            <input type="text" required="true" name="entry.744628153" oninput="validateName(this);" class="form-control" id="guestFirstName" placeholder="Name">
         </div>
-        <div class="form-group has-error" id="emailDiv">
+        <div class="form-group" id="emailDiv">
             <label for="guestEmail" class="control-label">Email</label>
             <div class="input-group">
                 <span class="input-group-addon">@</span>
-                <input type="email" class="form-control" name="entry.692929590" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$" required="true" id="guestEmail" placeholder="Email Address" oninput="validateEmail(this);">
+                <input type="email" class="form-control" name="entry.993345222" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$" id="guestEmail" placeholder="Email Address" oninput="validateEmail(this);">
             </div>
-            <span id="phoneNumHelp" class="help-block">A valid email address like name@example.com</span>
+            <span id="phoneNumHelp" class="help-block">name@example.com</span>
         </div>
         <div class="form-group" id="phoneDiv">
             <label for="guestPhoneNum" class="control-label">Phone Number</label>
-            <input type="tel" class="form-control" name="entry.2034164786" pattern="[0-9()-+ ]{10,15}" oninput="validatePhone(this);" id="guestPhoneNum" placeholder="Phone Number" aria-describedby="phoneNumHelp">
-            <span id="phoneNumHelp" class="help-block">Please enter your 10 digit phone number</span>
+            <input type="tel" class="form-control" name="entry.1260657561" pattern="[0-9()-+ ]{10,15}" oninput="validatePhone(this);" id="guestPhoneNum" placeholder="Phone Number" aria-describedby="phoneNumHelp">
+            <span id="phoneNumHelp" class="help-block">10 digit phone number</span>
         </div>
     </fieldset>
-    <fieldset>
+    <fieldset class="form-border">
+        <legend class="form-border">Arrival</legend>
         <div class="form-group">
-            <label class="control-label">Will you be travelling to Kolkata for the wedding?</label>
+            <label class="control-label">Do you need accomodation in Kolkata for the wedding?</label>
             <div class="radio">
                 <label>
-                    <input type="radio" id="guestTravelKolkata" name="entry.1264061408" value="Yes" checked="checked" onclick="$('#guestTravelKolDiv').removeClass('hidden');"> Yes
+                    <input type="radio" id="guestAccomKol" name="entry.1537820142" value="Yes" required="true"> Yes
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" id="guestTravelKolkata" name="entry.1264061408" value="No" onclick="$('#guestTravelKolDiv').addClass('hidden');"> No
+                    <input type="radio" id="guestAccomKol" name="entry.1537820142" value="No" required="true"> No
                 </label>
             </div>
         </div>
-        <div id="guestTravelKolDiv">
-            <div class="form-group form-inline">
-                <!-- names: entry.1451076624_year entry.1451076624_month entry.1451076624_day -->
-                <label for="guestArrKolDate" class="control-label">Arriving On</label>
-                <span id="arrTimeHelpKol" class="help-block">The sangeet is on Thursday, and the wedding is on Friday</span>
+        <div class="form-group">
+            <!-- names: entry.1451076624_year entry.1451076624_month entry.1451076624_day -->
+            <label for="guestArrKolDay" class="control-label">Arrival Date</label>
+            <span id="arrTimeHelpKol" class="help-block">The sangeet is on Thursday, and the wedding on Friday</span>
 
-                <select class="" name="entry.1451076624_day" form="rsvpForm" id="guestArrKolDay">
-                    <option value="17">Tuesday, Jan 17</option>
-                    <option value="18" selected>Wednesday, Jan 18</option>
-                    <option value="19">Thursday, Jan 19</option>
-                    <option value="20">Friday, Jan 20</option>
-                </select>
-                <input type="text" id="guestArrKolMonth" class="hidden" name="entry.1451076624_month" value="01">
-                <input type="text" class="hidden" name="entry.1451076624_year" value="2017">
+            <select class="form-control" name="entry.232298634_day" form="rsvpForm" id="guestArrKolDay">
+                <option value="17">Tuesday, Jan 17</option>
+                <option value="18" selected>Wednesday, Jan 18</option>
+                <option value="19">Thursday, Jan 19</option>
+                <option value="20">Friday, Jan 20</option>
+            </select>
+            <input type="text" class="hidden" name="entry.232298634_month" value="01">
+            <input type="text" class="hidden" name="entry.232298634_year" value="2017">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Do you need a pickup?</label>
+            <div class="radio">
+                <label>
+                    <input type="radio" id="guestPickup" name="entry.574762284" value="Yes" onclick="$('#guestKolPickupDiv').removeClass('hidden');" required> Yes
+                </label>
             </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" id="guestPickup" name="entry.574762284" value="No" onclick="$('#guestKolPickupDiv').addClass('hidden');" required> No
+                </label>
+            </div>
+        </div>
 
+        <div id="guestKolPickupDiv" class="hidden">
             <div class="form-group form-inline">
                 <label for="guestArrKolTime" class="control-label" aria-describedby="arrTimeHelpKol">Arrival Time</label>
-                <span id="arrTimeHelpKol" class="help-block">This will help coordinate pickups from the airport if required</span>
-                <select class="" name="entry.1499328218_hour" form="rsvpForm" id="guestArrKolHr" onchange="handleAmPm(this);">
+                <span id="arrTimeHelpKol" class="help-block">This will help coordinate pickups</span>
+                <select class="" name="entry.1326088575_hour" form="rsvpForm" id="guestArrKolHr" onchange="handleAmPm(this);">
                     <option value="01">01</option>
                     <option value="02">02</option>
                     <option value="03">03</option>
@@ -66,7 +82,7 @@
                     <option value="12">12</option>
                 </select>
                 <label class="control-label">:</label>
-                <select class="" name="entry.1499328218_minute" form="rsvpForm" id="guestArrKolMin">
+                <select class="" name="entry.1326088575_minute" form="rsvpForm" id="guestArrKolMin">
                     <option value="00" selected>00</option>
                     <option value="30">30</option>
                 </select>
@@ -77,43 +93,48 @@
 
                 <!-- TODO: entry.1499328218_hour entry.1499328218_minute -->
             </div>
+
+            <div class="form-group" id="flightTrainDiv">
+                <label for="flightTrainDiv" class="control-label">Flight/Train No.</label>
+                <input type="text" name="entry.1633755365" class="form-control" id="flightTrainNum" maxlength="10">
+            </div>
         </div>
     </fieldset>
-    <fieldset>
+
+
+    <fieldset class="form-border">
+        <legend class="form-border">Departure</legend>
+
         <div class="form-group">
-            <label class="control-label">Will you be travelling to Lucknow for the wedding reception?</label>
+            <label for="guestDepKolDay" class="control-label">Departure Date</label>
+            <select class="form-control" name="entry.507586993_day" form="rsvpForm" id="guestDepKolDay" onchange="handleDropOff(this);">
+                <option value="21">Saturday, Jan 21</option>
+                <option value="22">Sunday, Jan 22</option>
+                <option value="31">Staying Longer</option>
+            </select>
+            <input type="text" class="hidden" name="entry.507586993_month" value="01">
+            <input type="text" class="hidden" name="entry.507586993_year" value="2017">
+        </div>
+
+        <div class="form-group" id="guestDepDropQuesDiv">
+            <label class="control-label">Do you need a dropoff?</label>
             <div class="radio">
                 <label>
-                    <input type="radio" id="guestTravelLuckonw" name="entry.486642084" value="Yes" checked onclick="$('#guestTravelLkoDiv').removeClass('hidden');"> Yes
+                    <input type="radio" id="guestDropoff" name="entry.445456907" value="Yes" onclick="$('#guestKolDropoffDiv').removeClass('hidden');" required> Yes
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" id="guestTravelLuckonw" name="entry.486642084" value="No" onclick="$('#guestTravelLkoDiv').addClass('hidden');"> No
+                    <input type="radio" id="guestDropoff" name="entry.445456907" value="No" onclick="$('#guestKolDropoffDiv').addClass('hidden');" required> No
                 </label>
             </div>
         </div>
-        <div id="guestTravelLkoDiv">
+
+        <div id="guestKolDropTimeDiv" class="hidden">
             <div class="form-group form-inline">
-                <!-- TODO: entry.559724985_year entry.559724985_month entry.559724985_day -->
-                <label for="guestArrLkoDate" class="control-label">Arriving On</label>
-                <span id="arrTimeHelpLko" class="help-block">The reception is on Monday, Jan 23 at 7:00PM</span>
-
-                <select class="" name="entry.559724985_day" form="rsvpForm" id="guestArrLkoDay">
-                    <option value="21">Saturday, Jan 21</option>
-                    <option value="22" selected>Sunday, Jan 22</option>
-                    <option value="23">Monday, Jan 23</option>
-                </select>
-                <input type="text" id="guestArrLkoMonth" class="hidden" name="entry.559724985_month" value="01">
-                <input type="text" class="hidden" name="entry.559724985_year" value="2017">
-            </div>
-
-
-            <div class="form-group form-inline">
-                <label for="guestArrLkoTime" class="control-label" aria-describedby="arrTimeHelpLko">Arrival Time</label>
-                <span id="arrTimeHelpLko" class="help-block">This will help coordinate pickups from the airport if required</span>
-                <!-- Todo: entry.284634383_hour entry.284634383_minute-->
-                <select class="" name="entry.284634383_hour" form="rsvpForm" id="guestArrLkoHr" onchange="handleAmPm(this);">
+                <label for="guestDepKolHr" class="control-label" aria-describedby="depTimeHelpKol">Departure Time</label>
+                <span id="depTimeHelpKol" class="help-block">This will help coordinate the dropoffs</span>
+                <select class="" name="entry.317833336_hour" form="rsvpForm" id="guestDepKolHr" onchange="handleAmPm(this);">
                     <option value="01">01</option>
                     <option value="02">02</option>
                     <option value="03">03</option>
@@ -124,22 +145,24 @@
                     <option value="08">08</option>
                     <option value="09">09</option>
                     <option value="10">10</option>
-                    <option value="11" selected>11</option>
+                    <option value="11">11</option>
                     <option value="12">12</option>
                 </select>
                 <label class="control-label">:</label>
-                <select class="" name="entry.284634383_minute" form="rsvpForm" id="guestArrLkoMin">
+                <select class="" name="entry.317833336_minute" form="rsvpForm" id="guestDepKolMin">
                     <option value="00" selected>00</option>
                     <option value="30">30</option>
                 </select>
-                <select class="" form="rsvpForm" id="guestArrLkoAmPm" onchange="handleAmPm(this);">
-                    <option value="AM" selected>AM</option>
-                    <option value="PM">PM</option>
+                <select class="" form="rsvpForm" id="guestDepKolAmPm" onchange="handleAmPm(this);">
+                    <option value="AM" >AM</option>
+                    <option value="PM" selected >PM</option>
                 </select>
             </div>
-
         </div>
     </fieldset>
+
+
+
     <div class="text-center pa-b-1">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>

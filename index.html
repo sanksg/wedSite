@@ -340,7 +340,16 @@
             console.log($(hrId).val());
         };
 
-
+        function handleDropOff (el){
+            if (el.value == '21') {
+                $('#guestDepDropQuesDiv').removeClass('hidden');
+            } else {
+                $('#guestDepDropQuesDiv').addClass('hidden');
+            }
+            
+        }
+        
+        
         function submitRsvp(ev) {
             frm = $('#rsvpForm');
             $.ajax({

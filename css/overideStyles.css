@@ -232,6 +232,28 @@ a.anchor {
 }
 
 
+fieldset.form-border {
+    border-color: gray;
+    border-style: dashed;
+    border-radius: 8px;
+    border-width: 1px;
+    
+    
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.2em 0;
+ }
+
+legend.form-border {
+    font-size: 1em;
+    color: grey;
+    text-align: left;
+    width:inherit;
+    padding:0 10px;
+    border: 0;
+}
+
+
+
 /*-------------------- Utility Class ----------------------*/
 
 .pa-1 {
