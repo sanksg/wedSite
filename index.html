@@ -53,7 +53,7 @@
                     <li>
                         <a href="#events">Events</a>
                     </li>
-<!--
+                    <!--
                     <li>
                         <a href="#details">Wedding Details</a>
                     </li>
@@ -78,10 +78,12 @@
                 <h4 class="text-center stretch text-uppercase">Friday, January 20<sup>th</sup>, 2017</h4>
                 <h4 class="text-center stretch">Kolkata, West Bengal</h4>
             </p>
-            
-            <div class="pa-t-1 pa-b-1 text-center stretch"><h4 class="text-center"><span id="daysToGo"></span> days to go!</h4></div>
+
+            <div class="pa-t-1 pa-b-1 text-center stretch">
+                <h4 class="text-center"><span id="daysToGo"></span> days to go!</h4></div>
             <p class="ma-t-1 text-center">
-                <button type="button" class="btn btn-info btn-large" id="rsvpButton"><h2>RSVP</h2></button>
+                <button type="button" class="btn btn-info btn-large" id="rsvpButton">
+                    <h2>RSVP</h2></button>
             </p>
             <!-- RSVP Modal -->
             <div id="rsvpModal" class="modal fade" role="dialog" style="display:none;">
@@ -173,19 +175,19 @@
             </div>
         </div>
         <!-- /.row -->
-        
+
         <!-- Reception in Lucknow - Row -->
-<!--        <div class="row pa-t-1 text-center"> -->
-            <!--Wedding in Kolkata large column 12 -->
-<!--
+        <!--        <div class="row pa-t-1 text-center"> -->
+        <!--Wedding in Kolkata large column 12 -->
+        <!--
             <div class="">
                 <img class="floral2" src="images/floral-12.jpg">
                 <h2 class="text-uppercase pa-b-1">Wedding Reception</h2>
             </div>
 -->
-            <!-- One event columns-->
-            <!-- Reception -->
-<!--
+        <!-- One event columns-->
+        <!-- Reception -->
+        <!--
             <div class="col-lg-4 center-block">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -202,9 +204,9 @@
         </div>
 -->
         <!-- /.row -->
-        
+
         <!--Wedding Details-->
-<!--
+        <!--
         <div class="row text-center">
             <img class="floral1" src="images/floral-2.jpg">
             <div>
@@ -236,7 +238,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <!-- Footer -->
         <footer>
@@ -257,113 +259,12 @@
     <!---->
 
     <!--Custom Javascript-->
+    <script src="js/effects.js"></script>
+    
     <script language="javascript">
-        //Set how many days to go once the page is ready
         $(document).ready(function () {
-            daysLeft();
-            
-            $('#rsvpModalBody').load('rsvpForm.html');
-
-
+            initialize();
         });
-
-        function daysLeft() {
-            var wedDate = new Date(2017, 0, 20);
-            var today = new Date(Date.now());
-            var timeMsc = wedDate.getTime() - today.getTime();
-            var dayDiff = Math.round(timeMsc / (1000 * 60 * 60 * 24));
-            $("#daysToGo").html(dayDiff);
-        }
-
-        function validateName(el) {
-            var input = $(el);
-            var re = /^[a-zA-Z ]+$/;
-            var is_name = re.test(input.val());
-            if (is_name) {
-                $('#nameDiv').removeClass("has-error").addClass("has-success");
-            } else {
-                $('#nameDiv').removeClass("has-success").addClass("has-error");
-            }
-        }
-
-        function validateEmail(el) {
-            var input = $(el);
-            var emailDiv = $('#emailDiv');
-            var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/;
-            var is_email = re.test(input.val());
-            if (is_email) {
-                emailDiv.removeClass("has-error").addClass("has-success");
-            } else {
-                emailDiv.removeClass("has-success").addClass("has-error");
-            }
-        }
-
-        function validatePhone(el) {
-            var input = $(el);
-            var phoneDiv = $('#phoneDiv');
-            var re = /[0-9()-+ ]{10,15}/;
-            var is_phone = re.test(input.val());
-            if (is_phone) {
-                phoneDiv.removeClass("has-error").addClass("has-success");
-            } else {
-                phoneDiv.removeClass("has-success").addClass("has-error");
-            }
-        }
-
-        //This function shows the modal with RSVP form 
-        $('#rsvpButton').click(function () {
-            $('#rsvpModal').modal({
-                show: true
-            })
-        });
-
-        //Convert from 12-hr format to 24hr format for arrival times
-        function handleAmPm(el) {
-            idPrefix = el.id.substring(0, 11);
-            amPmId = "#" + idPrefix + "AmPm";
-            hrId = "#" + idPrefix + "Hr";
-
-            val = $(amPmId).val();
-            currentHr = parseInt($(hrId).val());
-            console.log("Hr: " + currentHr);
-            newHr = currentHr;
-            if (val == "PM") {
-                if (currentHr <= 12) {
-                    newHr = currentHr + 12;
-                }
-            } else if (val == "AM") {
-                if (currentHr > 12) {
-                    newHr = currentHr - 12;
-                }
-            }
-            $(hrId + ' option:selected').val(newHr);
-            console.log($(hrId).val());
-        };
-
-        function handleDropOff (el){
-            if (el.value == '21') {
-                $('#guestDepDropQuesDiv').removeClass('hidden');
-            } else {
-                $('#guestDepDropQuesDiv').addClass('hidden');
-            }
-            
-        }
-        
-        
-        function submitRsvp(ev) {
-            frm = $('#rsvpForm');
-            $.ajax({
-                type: frm.attr('method'),
-                url: frm.attr('action'),
-                data: frm.serialize(),
-                complete: function (data) {
-                    $('#rsvpForm').addClass('hidden');
-                    $('#submitSuccess').removeClass('hidden');    
-                }
-            });
-
-            ev.preventDefault();
-        }
     </script>
 </body>
 

@@ -1,6 +1,4 @@
 
-
-
 function initialize() {
     //Set how many days to go once the page is ready
     daysLeft();
@@ -9,8 +7,13 @@ function initialize() {
 }
 
 function registerAllEventHandlers() {
-
     
+    //This function shows the modal with RSVP form 
+    $('#rsvpButton').click(function () {
+        $('#rsvpModal').modal({
+            show: true
+        })
+    });
     
 }
 
@@ -58,12 +61,9 @@ function validatePhone(el) {
     }
 }
 
-//This function shows the modal with RSVP form 
-$('#rsvpButton').click(function () {
-    $('#rsvpModal').modal({
-        show: true
-    })
-});
+
+
+
 
 //Convert from 12-hr format to 24hr format for arrival times
 function handleAmPm(el) {
@@ -88,15 +88,32 @@ function handleAmPm(el) {
     console.log($(hrId).val());
 };
 
-function handleDropOff(el) {
+function handleDepDate(el) {
+    clearRadios('guestDropQues');
     if (el.value == '21') {
-        $('#guestDepDropQuesDiv').removeClass('hidden');
+        $('#guestDropQues').removeClass('hidden');
     } else {
-        $('#guestDepDropQuesDiv').addClass('hidden');
+        $('#guestDropQues').addClass('hidden');
+        $('#guestKolDropTimeDiv').addClass('hidden');
     }
-
 }
 
+function clearRadios(id) {
+    var Radios = document.getElementById(id).getElementsByTagName('input');
+    for (var i = 0; i < Radios.length; i++) {
+        if (Radios[i].type == 'radio') {
+            Radios[i].checked = false;
+        }
+    }
+}
+
+function handleDropOffs(el) {
+    if (el.value == "Yes"){
+        $('#guestKolDropTimeDiv').removeClass('hidden');
+    } else if (el.value == "No") {
+        $('#guestKolDropTimeDiv').addClass('hidden');
+    }
+}
 
 function submitRsvp(ev) {
     frm = $('#rsvpForm');
