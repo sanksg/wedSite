@@ -72,15 +72,16 @@ function handleAmPm(el) {
     hrId = "#" + idPrefix + "Hr";
 
     val = $(amPmId).val();
+    console.log(val)
     currentHr = parseInt($(hrId).val());
     console.log("Hr: " + currentHr);
     newHr = currentHr;
     if (val == "PM") {
-        if (currentHr <= 12) {
+        if (currentHr < 12) {
             newHr = currentHr + 12;
         }
     } else if (val == "AM") {
-        if (currentHr > 12) {
+        if (currentHr >= 12) {
             newHr = currentHr - 12;
         }
     }
