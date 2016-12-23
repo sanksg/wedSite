@@ -72,9 +72,9 @@ function handleAmPm(el) {
     hrId = "#" + idPrefix + "Hr";
 
     val = $(amPmId).val();
-    console.log(val)
+//    console.log(val)
     currentHr = parseInt($(hrId).val());
-    console.log("Hr: " + currentHr);
+//    console.log("Hr: " + currentHr);
     newHr = currentHr;
     if (val == "PM") {
         if (currentHr < 12) {
@@ -86,7 +86,7 @@ function handleAmPm(el) {
         }
     }
     $(hrId + ' option:selected').val(newHr);
-    console.log($(hrId).val());
+//    console.log($(hrId).val());
 };
 
 function handleDepDate(el) {
